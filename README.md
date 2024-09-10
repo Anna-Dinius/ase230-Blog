@@ -1,6 +1,6 @@
 # ase230-Blog
 
-#Collaborators
+# Collaborators
 
 * Anna Dinius
 * Owen Newberry
