@@ -12,6 +12,22 @@ include_once('data.php');
   </head>
 
   <body>
-
+    <?php 
+      /*
+        This is a for loop that displays the titles of all blog posts. Once clicked, the user is sent to the details page with
+        an appropriate query string.
+      */
+      for($i = 0; $i < count($posts); $i++){
+    ?>
+      <div>
+        <a href="details.php?index=$i">
+          <h1>
+            <?= $posts[$i]['title'] ?>
+          </h1>
+        </a>
+      </div>
+    <?php 
+      }
+    ?>
   </body>
 </html>
