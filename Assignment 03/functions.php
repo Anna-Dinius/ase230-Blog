@@ -1,5 +1,6 @@
 <?php
-function getPost($posts, $index) {
+function getPost($posts, $index)
+{
   return $posts[$index];
 }
 ?>
