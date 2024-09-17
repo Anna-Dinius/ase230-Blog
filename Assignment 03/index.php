@@ -31,7 +31,7 @@ include_once('data.php');
     for ($i = 0; $i < count($posts); $i++) {
       ?>
       <div class="col-md-6">
-        <a href='detail.php?index=<?= $i ?>'>
+        <a href='detail.php?post_id=<?= $i ?>'>
           <div class="post row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
             <div class="col p-4 d-flex flex-column position-static">
               <h3>

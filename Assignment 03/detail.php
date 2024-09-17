@@ -2,7 +2,7 @@
 include_once('functions.php');
 include_once('data.php');
 
-$index = $_GET['index'];
+$index = $_GET['post_id'];
 $post = getPost($posts, $index);
 ?>
 
