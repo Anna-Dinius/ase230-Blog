@@ -20,7 +20,7 @@ include_once('data.php');
       for($i = 0; $i < count($posts); $i++){
     ?>
       <div>
-        <a href="details.php?index=$i">
+        <a href='detail.php' . ?index=$i>
           <h1>
             <?= $posts[$i]['title'] ?>
           </h1>
