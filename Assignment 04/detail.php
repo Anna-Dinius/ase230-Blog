@@ -1,11 +1,22 @@
 <?php
 include_once('functions.php');
-include_once('data.php');
+//include_once('data.php');
+
+$file = 'posts.json';
+$content = file_get_contents($file);
+$posts = json_decode($content, true);
+
 
 $index = $_GET['post_id'];
 $post = getPost($posts, $index);
 
 updateView($index);
+
+//visitors.csv
+$visits_file = 'visitors.csv';
+$visits = file('visitors.csv');
+$visits_list = explode(';', $visits[$index]);
+$visits_record = $visits_list[1];
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +46,10 @@ updateView($index);
       <p class="blog-post-meta"><?= $post['date'] ?> by <?= $post['author'] ?></p>
       <p><?= $post['content'] ?></p>
     </article>
+
+    <footer>
+      <p class="blog_post-meta">Visits: <?= $visits_record ?></p>
+    </footer>
   </main>
 </body>
 
