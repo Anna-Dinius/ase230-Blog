@@ -1,6 +1,10 @@
 <?php
 include_once('functions.php');
-include_once('data.php');
+//include_once('data.php');
+
+$file = 'posts.json';
+$content = file_get_contents($file);
+$posts = json_decode($content, true);
 
 ?>
 
