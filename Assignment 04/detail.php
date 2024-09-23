@@ -6,8 +6,15 @@ $file = 'posts.json';
 $content = file_get_contents($file);
 $posts = json_decode($content, true);
 
+
 $index = $_GET['post_id'];
 $post = getPost($posts, $index);
+
+//visitors.csv
+$visits_file = 'visitors.csv';
+$visits = file('visitors.csv');
+$visits_list = explode(';', $visits[$index]);
+$visits_record = $visits_list[1];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +44,9 @@ $post = getPost($posts, $index);
       <p class="blog-post-meta"><?= $post['date'] ?> by <?= $post['author'] ?></p>
       <p><?= $post['content'] ?></p>
     </article>
+    <footer>
+      <p class="blog_post-meta"> <?= $visits_record[0]?></p>
+    </footer>
   </main>
 </body>
 
