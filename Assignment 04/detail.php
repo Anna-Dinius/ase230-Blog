@@ -10,6 +10,8 @@ $posts = json_decode($content, true);
 $index = $_GET['post_id'];
 $post = getPost($posts, $index);
 
+updateView($index);
+
 //visitors.csv
 $visits_file = 'visitors.csv';
 $visits = file('visitors.csv');
@@ -44,8 +46,9 @@ $visits_record = $visits_list[1];
       <p class="blog-post-meta"><?= $post['date'] ?> by <?= $post['author'] ?></p>
       <p><?= $post['content'] ?></p>
     </article>
+
     <footer>
-      <p class="blog_post-meta"> <?= $visits_record[0]?></p>
+      <p class="blog_post-meta">Visits: <?= $visits_record ?></p>
     </footer>
   </main>
 </body>
